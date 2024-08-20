@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 
 root_dataset = datasets.CIFAR10(root='./data', train=True, download=True)
 mean = root_dataset.data.mean(axis=(0,1,2))/255
-std = root_dataset.data.std(axis=(0,1,2))/255 #255로 나누는 이유는 픽셀 값을 [0,1]로 변환하기 위함. RGB는 0~255사이 정수이기 때문
+std = root_dataset.data.std(axis=(0,1,2))/255 #255로 나누는 이유는 픽셀 값을 [0,1]로 변환하기 위함. RGB는 0~255사이 정수이기 때문.
 
 print(mean,std)
 transform = transforms.Compose([
